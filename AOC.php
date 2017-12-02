@@ -19,7 +19,15 @@ class AOC
     }
 }
 
-$include = __DIR__ . '/' . sprintf('%02d', $argv[1]) . '/main.php';
+$year = $argv[1];
+$day = $argv[2] ?? $argv[1];
+
+if (! isset($argv[2])) {
+    $year = date("y");
+}
+
+$day = sprintf('%02d', $day);
+$include = __DIR__ . "/20$year/$day/main.php";
 
 if (file_exists($include)) {
     include $include;
