@@ -30,6 +30,7 @@ $day = sprintf('%02d', $day);
 $include = __DIR__ . "/20$year/$day/main.php";
 
 if (file_exists($include)) {
+    require 'vendor/autoload.php';
     include $include;
 } else {
     AOC::debug($include . " doesn't exist!\nDay {$argv[1]} not yet created!\n");
