@@ -44,7 +44,7 @@ foreach ($input as $outer) {
         $diff = array_intersect_assoc($outer, $inner);
         if (count($diff) == count($outer)-1) {
             $id = implode($diff);
-            break;
+            break 2;
         }
     }
 }
